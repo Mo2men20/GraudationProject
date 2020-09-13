@@ -1,0 +1,117 @@
+﻿
+@model COResponse
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "J.U.S.T University Tracker";
+    ViewBag.Purpose = "Edit Mobile Applications Configurations here.";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+            <form class="form-control">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Background Tracker Settings</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-6 control-label" for="textinput">Desired Accuracy</label>
+                        <div class="col-md-6">
+                            <input id="textinput" name="textinput" value="" type="text" placeholder="" class="form-control input-md">
+
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-6 control-label" for="textinput">Distance Filter</label>
+                        <div class="col-md-6">
+                            <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
+
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-6 control-label" for="textinput">Work every (ms)</label>
+                        <div class="col-md-6">
+                            <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
+
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-6 control-label" for="textinput">Stationary Radius</label>
+                        <div class="col-md-6">
+                            <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
+
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-6 control-label" for="singlebutton"></label>
+                        <div class="col-md-6">
+                            <button id="singlebutton" name="singlebutton" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+
+            <form class="form-control">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Foreground Tracker Settings</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-6 control-label" for="textinput">Frequency</label>
+                        <div class="col-md-6">
+                            <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
+
+                        </div>
+                    </div>
+
+                    <!-- Multiple Radios -->
+                    <div class="form-group">
+                        <label class="col-md-6 control-label" for="radios">Enable High Accuracy</label>
+                        <div class="col-md-6">
+                            <div class="radio">
+                                <label for="radios-0">
+                                    <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+                                    True
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label for="radios-1">
+                                    <input type="radio" name="radios" id="radios-1" value="2">
+                                    False
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-6 control-label" for="singlebutton"></label>
+                        <div class="col-md-6">
+                            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

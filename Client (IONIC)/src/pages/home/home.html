@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      J.U.S.T Uni. Location Tracker
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+<div style="float: right">
+  <button ion-button color="secondary" type="button" (click)="GetNearbyDevices()">Get Nearby Devices</button>
+</div>
+<br>
+
+<ion-list>
+  <ion-list-header>
+    <b>Nearby Devices</b>
+  </ion-list-header>
+  <ion-item ion-item *ngFor="let item of nearbyList">
+    {{ item.UUID }}
+  </ion-item>  
+</ion-list>
+
+</ion-content>

@@ -1,0 +1,66 @@
+{
+  "dependencies": {
+    "Microsoft.AspNetCore.Cors": "1.1.0",
+    "Microsoft.AspNetCore.Diagnostics": "1.1.0",
+    "Microsoft.AspNetCore.Mvc": "1.1.1",
+    "Microsoft.AspNetCore.Razor.Tools": {
+      "version": "1.1.0-preview4-final",
+      "type": "build"
+    },
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.1.0",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.1.0",
+    "Microsoft.AspNetCore.StaticFiles": "1.1.0",
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
+    "Microsoft.Extensions.Logging.Console": "1.1.0",
+    "cloudscribe.Web.Navigation": "1.1.0-rc20170112",
+    "Microsoft.EntityFrameworkCore.Design": {
+      "version": "1.1.0",
+      "type": "build"
+    },
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "version": "1.0.0-preview2-final",
+      "type": "build"
+    },
+    "Newtonsoft.Json": "9.0.1",
+    "MoreLinq.Source.MoreEnumerable.DistinctBy": "1.0.1",
+    "MoreLinq": "2.4.0-beta-02"
+  },
+
+  "tools": {
+    "Microsoft.AspNetCore.Razor.Tools": "1.1.0-preview4-final",
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final",
+    "Microsoft.EntityFrameworkCore.Tools": "1.1.0-preview4-final",
+    "Microsoft.EntityFrameworkCore.Tools.DotNet": "1.0.0-preview3-final"
+  },
+
+   "frameworks": {
+    "net46": {
+      "frameworkAssemblies": {
+        "System.Device": "4.0.0.0"
+      }
+    }
+  },
+
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
+  },
+
+  "runtimeOptions": {
+    "configProperties": {
+      "System.GC.Server": true
+    }
+  },
+
+ "publishOptions": {
+  "include": [
+    "wwwroot",
+    "Views",
+    "appsettings.json",
+    "web.config"]  
+  },
+
+  "scripts": {
+    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+  }
+}

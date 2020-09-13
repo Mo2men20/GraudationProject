@@ -1,0 +1,90 @@
+﻿@model Settings
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Tracker Settings";
+    ViewBag.Purpose = "Edit the configurations here.";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <form role="form" asp-action="Settings" asp-controller="Home" method="post">
+            <div class="form-group">
+                <label asp-for="@Model.DesiredAccuracy">Desired Accuracy</label>
+                <input asp-for="@Model.DesiredAccuracy" value="@Model.DesiredAccuracy" class="form-control">
+                <p class="help-block">Desired accuracy in meters. Possible values [0, 10, 100, 1000]. The lower the number, the more power devoted to GeoLocation resulting in higher accuracy readings. 1000 results in lowest power drain and least accurate readings</p>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.DistanceFilter">Distance Filter</label>
+                <input asp-for="@Model.DistanceFilter" value="@Model.DistanceFilter" class="form-control">
+                <p class="help-block">The minimum distance (measured in meters) a device must move horizontally before an update event is generated.</p>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.StationaryRadius">Stationary Radius</label>
+                <input asp-for="@Model.StationaryRadius" value="@Model.StationaryRadius" class="form-control">
+                <p class="help-block">Stationary radius in meters. When stopped, the minimum distance the device must move beyond the stationary location for aggressive background-tracking to engage.</p>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.MinimumInterval">Interval</label>
+                <input asp-for="@Model.MinimumInterval" value="@Model.MinimumInterval" class="form-control">
+                <p class="help-block">In ms. </p>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        @if (Model.Debug)
+                        {
+                            <input type="checkbox" asp-for="@Model.Debug" checked="checked">
+                        }
+                        else
+                        {
+                            <input type="checkbox" asp-for="@Model.Debug">
+                        }
+                        Enable Debugging.
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        @if (Model.UseSpeed)
+                        {
+                            <input type="checkbox" asp-for="@Model.UseSpeed" checked="checked">
+                        }
+                        else
+                        {
+                            <input type="checkbox" asp-for="@Model.UseSpeed">
+                        }
+                        Use speed in calculating Interval.
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        @if (Model.UseBatteryLife)
+                        {
+                            <input type="checkbox" asp-for="@Model.UseBatteryLife" checked="checked">
+                        }
+                        else
+                        {
+                            <input type="checkbox" asp-for="@Model.UseBatteryLife">
+                        }
+                        Use battery life in calculating Interval.
+                    </label>
+                </div>
+            </div>
+
+
+            <hr />
+            <button type="submit" class="btn btn-primary pull-right">Submit</button>
+        </form>
+    </div>
+</div>
